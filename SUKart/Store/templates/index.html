@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<header>
+					<h1>Welcome to SUKart</h1>
+					<p>This is a website where you buy products and they are delivered to your doorstep</p>
+				</header>
+				<section class="tiles">
+					{% for product in products %}
+	                    <article class="style4">
+	                        <span class="image">
+	                            <img src="{{ product.image.url }}" alt=""></img>
+	                        </span>
+	                        <a href="{% url 'product-detail' product.name %}">
+	                            <h2>{{ product.name }}</h2>
+	                            <div class="content">
+	                                <p>{{ product.description }}</p>
+	                            </div>
+	                        </a>
+	                    </article>
+	                {% endfor %}
+				</section>
+			</div>
+		</div>
+{% endblock %}

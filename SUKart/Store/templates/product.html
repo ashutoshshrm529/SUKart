@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <div class="top_row">
+                <h1 id="productname">{{ product.name }}</h1>
+                <h1 id="selling_price">{{ product.price }}</h1>
+            </div>
+            <section class="tiles">
+                <article class="style1" id="product">
+                    <span class="image">
+                        <img id="productimage" src="{{ product.image.url }}" alt="">
+                    </span>
+                    <a>
+                        <div class="content">
+                            <p id="description">{{ product.description }}</p>
+                            <button id="cart-button" class="button primary">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </a>
+                </article>
+            </section>
+        </div>
+    </div>
+{% endblock %}
+
+{% block static %}
+	<link rel="stylesheet" href="{% static '/css/product.css' %}">
+	<script src="{% static '/js/product.js' %}"></script>
+{% endblock %}
